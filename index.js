@@ -9,6 +9,8 @@ const graph = {
   F: ["C", "X"],
 };
 
+const startKey = "A";
+
 const bfsMine = (graph, startNode) => {
   let isRead = {};
   isRead[startNode] = true;
@@ -54,14 +56,14 @@ const bfsQueue = (graph, startNode) => {
 
 const runBfsMine = () => {
   var t0 = performance.now();
-  bfsMine(graph, "B");
+  bfsMine(graph, startKey);
   var t1 = performance.now();
   changeTarget("bfsMine", t1 - t0);
 };
 
 const runBfsQueue = () => {
   var t0 = performance.now();
-  bfsQueue(graph, "A");
+  bfsQueue(graph, startKey);
   var t1 = performance.now();
   changeTarget("bfsQueue", t1 - t0);
 };
