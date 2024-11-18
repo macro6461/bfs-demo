@@ -11,6 +11,8 @@ const graph = {
 
 const bfsMine = (graph, startNode) => {
   let isRead = {};
+  isRead[startNode] = true;
+  console.log(startNode);
   for (let key in graph) {
     if (!isRead[key]) {
       isRead[key] = true;
@@ -52,7 +54,7 @@ const bfsQueue = (graph, startNode) => {
 
 const runBfsMine = () => {
   var t0 = performance.now();
-  bfsMine(graph, "A");
+  bfsMine(graph, "B");
   var t1 = performance.now();
   changeTarget("bfsMine", t1 - t0);
 };
